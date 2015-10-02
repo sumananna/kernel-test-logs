@@ -1,0 +1,1161 @@
+
+U-Boot SPL 2015.07 (Jul 20 2015 - 12:39:37)
+OMAP5432 ES2.0
+SPL: Please implement spl_start_uboot() for your board
+SPL: Direct Linux boot not active!
+reading u-boot.img
+reading u-boot.img
+
+
+U-Boot 2015.07 (Jul 20 2015 - 12:39:37 -0500)
+
+CPU  : OMAP5432 ES2.0
+Board: OMAP5432 uEVM
+I2C:   ready
+DRAM:  2 GiB
+MMC:   OMAP SD/MMC: 0, OMAP SD/MMC: 1
+SCSI:  SATA link 0 timeout.
+AHCI 0001.0300 32 slots 1 ports 3 Gbps 0x1 impl SATA mode
+flags: 64bit ncq stag pm led clo only pmp pio slum part ccc apst
+scanning bus for devices...
+Found 0 device(s).
+Net:   No ethernet found.
+Hit any key to stop autoboot:  0
+switch to partitions #0, OK
+mmc0 is current device
+SD/MMC found on device 0
+reading uEnv.txt
+1636 bytes read in 4 ms (399.4 KiB/s)
+Loaded environment from uEnv.txt
+Importing environment from mmc0 ...
+Running uenvcmd ...
+starting USB...
+USB0:   USB EHCI 1.00
+scanning bus 0 for devices... 3 USB Device(s) found
+       scanning usb for storage devices... 0 Storage Device(s) found
+       scanning usb for ethernet devices... 1 Ethernet Device(s) found
+network start
+Loading DTB over network ...
+Waiting for Ethernet connection... done.
+BOOTP broadcast 1
+BOOTP broadcast 2
+*** Unhandled DHCP Option in OFFER/ACK: 150
+*** Unhandled DHCP Option in OFFER/ACK: 44
+*** Unhandled DHCP Option in OFFER/ACK: 46
+*** Unhandled DHCP Option in OFFER/ACK: 150
+*** Unhandled DHCP Option in OFFER/ACK: 44
+*** Unhandled DHCP Option in OFFER/ACK: 46
+DHCP client bound to address 128.247.9.82 (1034 ms)
+Using sms0 device
+TFTP from server 128.247.9.166; our IP address is 128.247.9.82
+Filename 'suman/omap5-uevm.dtb'.
+Load address: 0x88000000
+Loading: ####
+         2.1 MiB/s
+done
+Bytes transferred = 52118 (cb96 hex)
+DTB loaded ...
+Loading kernel over network ...
+Waiting for Ethernet connection... done.
+BOOTP broadcast 1
+*** Unhandled DHCP Option in OFFER/ACK: 150
+*** Unhandled DHCP Option in OFFER/ACK: 44
+*** Unhandled DHCP Option in OFFER/ACK: 46
+*** Unhandled DHCP Option in OFFER/ACK: 150
+*** Unhandled DHCP Option in OFFER/ACK: 44
+*** Unhandled DHCP Option in OFFER/ACK: 46
+DHCP client bound to address 128.247.9.82 (29 ms)
+Using sms0 device
+TFTP from server 128.247.9.166; our IP address is 128.247.9.82
+Filename 'suman/zImage'.
+Load address: 0x82000000
+Loading: #################################################################
+         #################################################################
+         #################################################################
+         #######################################################
+         2.2 MiB/s
+done
+Bytes transferred = 3669776 (37ff10 hex)
+Kernel loaded ...
+network stop
+Kernel image @ 0x82000000 [ 0x000000 - 0x37ff10 ]
+## Flattened Device Tree blob at 88000000
+   Booting using the fdt blob at 0x88000000
+   Loading Device Tree to 8fff0000, end 8ffffb95 ... OK
+
+Starting kernel ...
+
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Initializing cgroup subsys cpuset
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 4.3.0-rc3-00008-gbc0b61985337 (suman@Irmo) (gcc version 4.9.3 20150413 (prerelease) (L
+inaro GCC 4.9-2015.05) ) #55 SMP Fri Oct 2 16:03:48 CDT 2015
+[    0.000000] CPU: ARMv7 Processor [412fc0f2] revision 2 (ARMv7), cr=10c5387d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, PIPT instruction cache
+[    0.000000] Machine model: TI OMAP5 uEVM board
+[    0.000000] cma: Reserved 16 MiB at 0xfd800000
+[    0.000000] Memory policy: Data cache writealloc
+[    0.000000] OMAP4: Map 0xfee00000 to fe600000 for dram barrier
+[    0.000000] OMAP5432 ES2.0
+[    0.000000] PERCPU: Embedded 14 pages/cpu @ee5ad000 s25088 r8192 d24064 u57344
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 517970
+[    0.000000] Kernel command line: root=/dev/nfs rw nfsroot=128.247.9.166:/home/suman/projects/rfs/dra7/am57xx-sdk
+ rootdelay=1 console=ttyO2,115200n8 noinitrd ip=dhcp
+[    0.000000] PID hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+[    0.000000] Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+[    0.000000] Memory: 2024236K/2078720K available (6723K kernel code, 750K rwdata, 2288K rodata, 452K init, 8265K
+bss, 38100K reserved, 16384K cma-reserved, 1284096K highmem)
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xffc00000 - 0xfff00000   (3072 kB)
+[    0.000000]     vmalloc : 0xf0000000 - 0xff000000   ( 240 MB)
+[    0.000000]     lowmem  : 0xc0000000 - 0xef800000   ( 760 MB)
+[    0.000000]     pkmap   : 0xbfe00000 - 0xc0000000   (   2 MB)
+[    0.000000]     modules : 0xbf000000 - 0xbfe00000   (  14 MB)
+[    0.000000]       .text : 0xc0008000 - 0xc08d4ebc   (9012 kB)
+[    0.000000]       .init : 0xc08d5000 - 0xc0946000   ( 452 kB)
+[    0.000000]       .data : 0xc0946000 - 0xc0a01b60   ( 751 kB)
+[    0.000000]        .bss : 0xc0a04000 - 0xc12164f8   (8266 kB)
+[    0.000000] Running RCU self tests
+[    0.000000] Hierarchical RCU implementation.
+[    0.000000]  RCU lockdep checking is enabled.
+[    0.000000]  Build-time adjustment of leaf fanout to 32.
+[    0.000000] NR_IRQS:16 nr_irqs:16 16
+[    0.000000] OMAP clockevent source: timer1 at 32768 Hz
+[    0.000000] clocksource: 32k_counter: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 58327039986419 ns
+[    0.000030] sched_clock: 32 bits at 32kHz, resolution 30517ns, wraps every 65535999984741ns
+[    0.000030] OMAP clocksource: 32k_counter at 32768 Hz
+[    0.000488] Architected cp15 timer(s) running at 6.14MHz (virt).
+[    0.000488] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x16ac02862, max_idle_ns: 44079520
+2218 ns
+[    0.000523] sched_clock: 56 bits at 6MHz, resolution 162ns, wraps every 4398046511085ns
+[    0.000534] Switching to timer-based delay loop, resolution 162ns
+[    0.001549] Console: colour dummy device 80x30
+[    0.001581] Lock dependency validator: Copyright (c) 2006 Red Hat, Inc., Ingo Molnar
+[    0.001588] ... MAX_LOCKDEP_SUBCLASSES:  8
+[    0.001595] ... MAX_LOCK_DEPTH:          48
+[    0.001601] ... MAX_LOCKDEP_KEYS:        8191
+[    0.001607] ... CLASSHASH_SIZE:          4096
+[    0.001613] ... MAX_LOCKDEP_ENTRIES:     32768
+[    0.001618] ... MAX_LOCKDEP_CHAINS:      65536
+[    0.001624] ... CHAINHASH_SIZE:          32768
+[    0.001630]  memory used by lock dependency info: 5167 kB
+[    0.001636]  per task-struct memory footprint: 1536 bytes
+[    0.001656] Calibrating delay loop (skipped), value calculated using timer frequency.. 12.28 BogoMIPS (lpj=61440
+)
+[    0.001669] pid_max: default: 32768 minimum: 301
+[    0.001939] Security Framework initialized
+[    0.002041] Mount-cache hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.002052] Mountpoint-cache hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.004072] Initializing cgroup subsys io
+[    0.004147] Initializing cgroup subsys memory
+[    0.004211] Initializing cgroup subsys devices
+[    0.004266] Initializing cgroup subsys freezer
+[    0.004347] Initializing cgroup subsys perf_event
+[    0.004395] CPU: Testing write buffer coherency: ok
+[    0.005232] /cpus/cpu@0 missing clock-frequency property
+[    0.005253] /cpus/cpu@1 missing clock-frequency property
+[    0.005265] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+[    0.005319] Setting up static identity map for 0x80008280 - 0x800082f0
+[    0.009527] CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+[    0.009917] Brought up 2 CPUs
+[    0.009930] SMP: Total of 2 processors activated (24.57 BogoMIPS).
+[    0.009937] CPU: All CPU(s) started in SVC mode.
+[    0.012484] devtmpfs: initialized
+[    0.054010] VFP support v0.3: implementor 41 architecture 4 part 30 variant f rev 0
+[    0.055324] omap_hwmod: l3_main_3 using broken dt data from ocp
+[    0.056568] omap_hwmod: l3_main_2 using broken dt data from ocp
+[    0.168809] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.169834] pinctrl core: initialized pinctrl subsystem
+[    0.173260] NET: Registered protocol family 16
+[    0.176712] DMA: preallocated 256 KiB pool for atomic coherent allocations
+[    0.201045] cpuidle: using governor ladder
+[    0.231029] cpuidle: using governor menu
+[    0.241454] OMAP GPIO hardware version 0.1
+[    0.251837] platform 50000000.gpmc: Cannot lookup hwmod 'gpmc'
+[    0.252039] omap-gpmc 50000000.gpmc: _od_fail_runtime_resume: FIXME: missing hwmod/omap_dev info
+[    0.252054] omap-gpmc 50000000.gpmc: GPMC revision 6.0
+[    0.257274] irq: no irq domain found for /ocp/l4@4a000000/scm@2800/pinmux@40 !
+[    0.278356] No ATAGs?
+[    0.278411] hw-breakpoint: found 5 (+1 reserved) breakpoint and 4 watchpoint registers.
+[    0.278420] hw-breakpoint: maximum watchpoint size is 8 bytes.
+[    0.280490] OMAP DMA hardware revision 0.0
+[    0.332044] omap-dma-engine 4a056000.dma-controller: OMAP DMA engine driver
+[    0.336947] omap-iommu 4a066000.mmu: 4a066000.mmu registered
+[    0.337279] omap-iommu 55082000.mmu: 55082000.mmu registered
+[    0.338064] SCSI subsystem initialized
+[    0.338930] usbcore: registered new interface driver usbfs
+[    0.339049] usbcore: registered new interface driver hub
+[    0.339157] usbcore: registered new device driver usb
+[    0.339722] hsusb2_phy supply vcc not found, using dummy regulator
+[    0.340238] hsusb3_phy supply vcc not found, using dummy regulator
+[    0.340787] omap_i2c 48070000.i2c: could not find pctldev for node /ocp/l4@4a000000/scm@2800/pinmux@40/pinmux_i2
+c1_pins, deferring probe
+[    0.341942] omap_i2c 48072000.i2c: bus 1 rev0.12 at 100 kHz
+[    0.342702] omap_i2c 48060000.i2c: bus 2 rev0.12 at 100 kHz
+[    0.343430] omap_i2c 4807a000.i2c: bus 3 rev0.12 at 100 kHz
+[    0.343502] omap_i2c 4807c000.i2c: could not find pctldev for node /ocp/l4@4a000000/scm@2800/pinmux@40/pinmux_i2
+c5_pins, deferring probe
+[    0.343797] pps_core: LinuxPPS API ver. 1 registered
+[    0.343804] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.343846] PTP clock support registered
+[    0.346522] clocksource: Switched to clocksource arch_sys_counter
+[    0.451013] NET: Registered protocol family 2
+[    0.452328] TCP established hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.452453] TCP bind hash table entries: 8192 (order: 6, 294912 bytes)
+[    0.454699] TCP: Hash tables configured (established 8192 bind 8192)
+[    0.454829] UDP hash table entries: 512 (order: 3, 40960 bytes)
+[    0.455135] UDP-Lite hash table entries: 512 (order: 3, 40960 bytes)
+[    0.455992] NET: Registered protocol family 1
+[    0.457007] RPC: Registered named UNIX socket transport module.
+[    0.457017] RPC: Registered udp transport module.
+[    0.457024] RPC: Registered tcp transport module.
+[    0.457032] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.499275] hw perfevents: enabled with armv7_cortex_a15 PMU driver, 7 counters available
+[    0.503361] futex hash table entries: 512 (order: 3, 32768 bytes)
+[    0.503656] audit: initializing netlink subsys (disabled)
+[    0.503772] audit: type=2000 audit(0.490:1): initialized
+[    0.506145] VFS: Disk quotas dquot_6.6.0
+[    0.506251] VFS: Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+[    0.507760] NFS: Registering the id_resolver key type
+[    0.507994] Key type id_resolver registered
+[    0.508003] Key type id_legacy registered
+[    0.508120] jffs2: version 2.2. (NAND) (SUMMARY)  Â© 2001-2006 Red Hat, Inc.
+[    0.511705] bounce: pool size: 64 pages
+[    0.511765] io scheduler noop registered
+[    0.511781] io scheduler deadline registered
+[    0.511813] io scheduler cfq registered (default)
+[    0.515217] ti-pipe3 4a096000.phy: can't get syscon-pllreset, sata dpll won't idle
+[    0.516680] pinctrl-single 4a002840.pinmux: 219 pins at pa fc002840 size 438
+[    0.517095] pinctrl-single 4ae0c840.pinmux: 28 pins at pa fce0c840 size 56
+[    0.521975] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    0.526307] omap_uart 4806a000.serial: no wakeirq for uart0
+[    0.526649] 4806a000.serial: ttyO0 at MMIO 0x4806a000 (irq = 306, base_baud = 3000000) is a OMAP UART0
+[    0.527737] omap_uart 4806c000.serial: no wakeirq for uart1
+[    0.527931] 4806c000.serial: ttyO1 at MMIO 0x4806c000 (irq = 307, base_baud = 3000000) is a OMAP UART1
+[    0.528996] 48020000.serial: ttyO2 at MMIO 0x48020000 (irq = 308, base_baud = 3000000) is a OMAP UART2
+[    1.426696] console [ttyO2] enabled
+[    1.431381] omap_uart 4806e000.serial: no wakeirq for uart3
+[    1.437452] 4806e000.serial: ttyO3 at MMIO 0x4806e000 (irq = 309, base_baud = 3000000) is a OMAP UART3
+[    1.448009] omap_uart 48066000.serial: no wakeirq for uart4
+[    1.454029] 48066000.serial: ttyO4 at MMIO 0x48066000 (irq = 310, base_baud = 3000000) is a OMAP UART4
+[    1.464531] omap_uart 48068000.serial: no wakeirq for uart5
+[    1.470574] 48068000.serial: ttyO5 at MMIO 0x48068000 (irq = 311, base_baud = 3000000) is a OMAP UART5
+[    1.504360] brd: module loaded
+[    1.521815] loop: module loaded
+[    1.527323] ahci 4a140000.sata: SSS flag set, parallel bus scan disabled
+[    1.534354] ahci 4a140000.sata: AHCI 0001.0300 32 slots 1 ports 3 Gbps 0x1 impl platform mode
+[    1.543286] ahci 4a140000.sata: flags: 64bit ncq sntf stag pm led clo only pmp pio slum part ccc apst
+[    1.555416] scsi host0: ahci
+[    1.559307] ata1: SATA max UDMA/133 mmio [mem 0x4a140000-0x4a1410ff] port 0x100 irq 338
+[    1.568385] mtdoops: mtd device (mtddev=name/number) must be supplied
+[    1.582361] usbcore: registered new interface driver smsc95xx
+[    1.589060] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    1.595897] ehci-omap: OMAP-EHCI Host Controller driver
+[    1.614826] ehci-omap 4a064c00.ehci: EHCI Host Controller
+[    1.620828] ehci-omap 4a064c00.ehci: new USB bus registered, assigned bus number 1
+[    1.629173] ehci-omap 4a064c00.ehci: irq 406, io mem 0x4a064c00
+[    1.646496] ehci-omap 4a064c00.ehci: USB 2.0 started, EHCI 1.00
+[    1.653635] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+[    1.660757] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.668326] usb usb1: Product: EHCI Host Controller
+[    1.673433] usb usb1: Manufacturer: Linux 4.3.0-rc3-00008-gbc0b61985337 ehci_hcd
+[    1.681193] usb usb1: SerialNumber: 4a064c00.ehci
+[    1.688418] hub 1-0:1.0: USB hub found
+[    1.692486] hub 1-0:1.0: 3 ports detected
+[    1.740284] mousedev: PS/2 mouse device common for all mice
+[    1.746122] i2c /dev entries driver
+[    1.856785] ledtrig-cpu: registered to indicate activity on CPUs
+[    1.864622] oprofile: using timer interrupt.
+[    1.869568] Initializing XFRM netlink socket
+[    1.874310] NET: Registered protocol family 10
+[    1.880612] sit: IPv6 over IPv4 tunneling driver
+[    1.887008] NET: Registered protocol family 17
+[    1.891697] NET: Registered protocol family 15
+[    1.896683] Key type dns_resolver registered
+[    1.901318] omap_vc_init_channel: No PMIC info for vdd_core
+[    1.907161] omap_vp_init: No PMIC info for vdd_core
+[    1.912270] omap_vc_init_channel: No PMIC info for vdd_mm
+[    1.917928] omap_vp_init: No PMIC info for vdd_mm
+[    1.922852] omap_vc_init_channel: No PMIC info for vdd_mpu
+[    1.926478] ata1: SATA link down (SStatus 0 SControl 300)
+[    1.934243] omap_vp_init: No PMIC info for vdd_mpu
+[    1.939914] Power Management for TI OMAP4+ devices.
+[    1.945268] ThumbEE CPU extension supported.
+[    1.949786] Registering SWP/SWPB emulation handler
+[    1.950479] mmc0: MAN_BKOPS_EN bit is not set
+[    1.952763] mmc0: new high speed MMC card at address 0001
+[    1.954625] mmcblk0: mmc0:0001 SEM04G 3.68 GiB
+[    1.955281] mmcblk0boot0: mmc0:0001 SEM04G partition 1 2.00 MiB
+[    1.955889] mmcblk0boot1: mmc0:0001 SEM04G partition 2 2.00 MiB
+[    1.982232] SmartReflex Class3 initialized
+[    1.992120] palmas 0-0048: Irq flag is 0x00000000
+[    2.019662] palmas 0-0048: Muxing GPIO 2, PWM 0, LED 0
+[    2.076589] twl6040 0-004b: clk32k is not handled
+[    2.085828] omap_i2c 48070000.i2c: bus 0 rev0.12 at 400 kHz
+[    2.093412] omap_i2c 4807c000.i2c: bus 4 rev0.12 at 400 kHz
+[    2.106490] usb 1-3: new high-speed USB device number 2 using ehci-omap
+[    2.138203] hctosys: unable to open rtc device (rtc0)
+[    2.143503] sr_init: No PMIC hook to init smartreflex
+[    2.149032] sr_init: platform driver register failed for SR
+[    2.204667] mmc2: host does not support reading read-only switch, assuming write-enable
+[    2.215332] mmc2: new high speed SD card at address b368
+[    2.222258] mmcblk1: mmc2:b368 NCard 1.85 GiB
+[    2.228660]  mmcblk1: p1 p2
+[    2.257026] usb 1-3: New USB device found, idVendor=0424, idProduct=9730
+[    2.264057] usb 1-3: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+[    2.275287] smsc95xx v1.0.4
+[    2.342585] smsc95xx 1-3:1.0 eth0: register 'smsc95xx' at usb-4a064c00.ehci-3, smsc95xx USB 2.0 Ethernet, 6e:06:
+35:51:79:58
+[    2.626476] usb 1-2: new high-speed USB device number 3 using ehci-omap
+[    2.776876] usb 1-2: New USB device found, idVendor=0424, idProduct=3503
+[    2.783912] usb 1-2: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+[    2.792758] hub 1-2:1.0: USB hub found
+[    2.796872] hub 1-2:1.0: 3 ports detected
+[    3.250674] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+[    4.744536] smsc95xx 1-3:1.0 eth0: link up, 100Mbps, full-duplex, lpa 0x45E1
+[    4.756497] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[    4.777395] Sending DHCP requests ., OK
+[    5.826497] IP-Config: Got DHCP answer from 128.247.8.4, my address is 128.247.8.225
+[    5.835183] IP-Config: Complete:
+[    5.838604]      device=eth0, hwaddr=6e:06:35:51:79:58, ipaddr=128.247.8.225, mask=255.255.254.0, gw=128.247.8.1
+[    5.849296]      host=dhcp-128-247-8-225, domain=am.dhcp.ti.com, nis-domain=(none)
+[    5.857250]      bootserver=0.0.0.0, rootserver=128.247.9.166, rootpath=
+[    5.864097]      nameserver0=192.0.2.2, nameserver1=192.0.2.3
+[    5.871810] ldo3: disabling
+[    5.875789] ldo8: disabling
+[    5.880964] Waiting 1 sec before mounting root device...
+[    6.909849] VFS: Mounted root (nfs filesystem) on device 0:15.
+[    6.917230] devtmpfs: mounted
+[    6.920745] Freeing unused kernel memory: 452K (c08d5000 - c0946000)
+INIT: version 2.88 booting
+Error opening /dev/fb0: No such file or directory
+Starting udev
+[    7.997119] udevd[125]: starting version 182
+depmod: ERROR: could not open directory /lib/modules/4.3.0-rc3-00008-gbc0b61985337: No such file or directory
+depmod: WARNING: -e needs -E or -F
+depmod: ERROR: could not open directory /lib/modules/4.3.0-rc3-00008-gbc0b61985337: No such file or directory
+depmod: FATAL: could not search modules: No such file or directory
+Starting Bootlog daemon: bootlogd: cannot allocate pseudo tty: No such file or directory
+bootlogd.
+[   11.202676] random: dd urandom read with 118 bits of entropy available
+[   11.497994] FAT-fs (mmcblk1p1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+[   11.529834] EXT4-fs (mmcblk1p2): warning: mounting fs with errors, running e2fsck is recommended
+[   11.546131] EXT4-fs (mmcblk1p2): mounted filesystem with ordered data mode. Opts: (null)
+[   11.606089] random: nonblocking pool is initialized
+ALSA: Restoring mixer settings...
+hwclock: can't open '/dev/misc/rtc': No such file or directory
+/usr/sbin/alsactl: load_state:1729: No soundcards found...
+Mon Sep 21 15:56:00 UTC 2015
+hwclock: can't open '/dev/misc/rtc': No such file or directory
+INIT: Entering runlevel: 5
+NOT configuring network interfaces: / is an NFS mount
+Starting system message bus: dbus.
+UIM SYSFS Node Not Found
+Starting Dropbear SSH server: dropbear.
+Starting telnet daemon.
+Starting rpcbind daemon...done.
+creating NFS state directory: done
+starting statd: done
+hwclock: can't open '/dev/misc/rtc': No such file or directory
+Starting syslogd/klogd: done
+Starting thttpd.
+Starting Lighttpd Web Server: lighttpd.
+2015-09-21 15:56:03: (/home/jenkins/tisdk-build-am57x/build-CORTEX_1/arago-tmp-external-linaro-toolchain/work/corte
+xa15t2hf-vfp-neon-linux-gnueabi/lighttpd/1.4.33-r1/lighttpd-1.4.33/src/log.c.166) server started
+/
+Starting Matrix GUI application.
+Enabling thermal zones...
+/etc/rc5.d/S98thermal-zone-init: line 7: /sys/class/thermal/thermal_zone*/mode: No such file or directory
+***************************************************************
+***************************************************************
+NOTICE: This file system contains the followin GPLv3 packages:
+        autoconf
+        binutils
+        cpp-symlinks
+        cpp
+        g++-symlinks
+        g++
+        gcc-symlinks
+        gcc
+        gdbserver
+        libgmp10
+        libmpc3
+        libmpfr4
+        make
+        parted
+
+If you do not wish to distribute GPLv3 components please remove
+the above packages prior to distribution.  This can be done using
+the opkg remove command.  i.e.:
+    opkg remove <package>
+Where <package> is the name printed in the list above
+
+NOTE: If the package is a dependency of another package you
+      will be notified of the dependent packages.  You should
+      use the --force-removal-of-dependent-packages option to
+      also remove the dependent packages as well
+***************************************************************
+***************************************************************
+Stopping Bootlog daemon: bootlogd.
+
+ _____                    _____           _         _
+|  _  |___ ___ ___ ___   |  _  |___ ___  |_|___ ___| |_
+|     |  _| .'| . | . |  |   __|  _| . | | | -_|  _|  _|
+|__|__|_| |__,|_  |___|  |__|  |_| |___|_| |___|___|_|
+              |___|                    |___|
+
+Arago Project http://arago-project.org am57xx-evm /dev/ttyO2
+
+Arago 2015.03 am57xx-evm /dev/ttyO2
+
+am57xx-evm login: root
+root@am57xx-evm:~#
+root@am57xx-evm:~#
+root@am57xx-evm:~# cat /proc/version
+Linux version 4.3.0-rc3-00008-gbc0b61985337 (suman@Irmo) (gcc version 4.9.3 20150413 (prerelease) (Linaro GCC 4.9-2
+015.05) ) #55 SMP Fri Oct 2 16:03:48 CDT 2015
+root@am57xx-evm:~#
+root@am57xx-evm:~# cat /sys/bus/soc/devices/soc0/*
+OMAP5
+OMAP5432
+cat: read error: Is a directory
+ES2.0
+cat: read error: Is a directory
+GP
+root@am57xx-evm:~#
+root@am57xx-evm:~# dmesg | grep mmu
+[    0.336947] omap-iommu 4a066000.mmu: 4a066000.mmu registered
+[    0.337279] omap-iommu 55082000.mmu: 55082000.mmu registered
+root@am57xx-evm:~#
+root@am57xx-evm:~# ls -l /sys/bus/platform/devices/ | grep mmu
+lrwxrwxrwx    1 root     root             0 Jan  1  1970 4a066000.mmu -> ../../../devices/platform/44000000.ocp/4a0
+66000.mmu
+lrwxrwxrwx    1 root     root             0 Jan  1  1970 55082000.mmu -> ../../../devices/platform/44000000.ocp/550
+82000.mmu
+lrwxrwxrwx    1 root     root             0 Jan  1  1970 iommu_test -> ../../../devices/platform/iommu_test
+root@am57xx-evm:~#
+root@am57xx-evm:~#
+root@am57xx-evm:~# ls -l /sys/bus/platform/drivers/omap-iommu/
+lrwxrwxrwx    1 root     root             0 Sep 21 15:56 4a066000.mmu -> ../../../../devices/platform/44000000.ocp/
+4a066000.mmu
+lrwxrwxrwx    1 root     root             0 Sep 21 15:56 55082000.mmu -> ../../../../devices/platform/44000000.ocp/
+55082000.mmu
+--w-------    1 root     root          4096 Sep 21 15:56 bind
+--w-------    1 root     root          4096 Sep 21 15:56 uevent
+--w-------    1 root     root          4096 Sep 21 15:56 unbind
+root@am57xx-evm:~#
+root@am57xx-evm:~# ls -l /proc/device-tree/ocp/ | grep mmu
+drwxr-xr-x    2 root     root             0 Sep 21 15:56 mmu@4a066000
+drwxr-xr-x    2 root     root             0 Sep 21 15:56 mmu@55082000
+root@am57xx-evm:~#
+root@am57xx-evm:~#
+root@am57xx-evm:~# ls -l /d/omap_iommu/*mmu/*
+-r--------    1 root     root             0 Jan  1  1970 /d/omap_iommu/4a066000.mmu/nr_tlb_entries
+-r--------    1 root     root             0 Jan  1  1970 /d/omap_iommu/4a066000.mmu/pagetable
+-r--------    1 root     root             0 Jan  1  1970 /d/omap_iommu/4a066000.mmu/regs
+-r--------    1 root     root             0 Jan  1  1970 /d/omap_iommu/4a066000.mmu/tlb
+-r--------    1 root     root             0 Jan  1  1970 /d/omap_iommu/55082000.mmu/nr_tlb_entries
+-r--------    1 root     root             0 Jan  1  1970 /d/omap_iommu/55082000.mmu/pagetable
+-r--------    1 root     root             0 Jan  1  1970 /d/omap_iommu/55082000.mmu/regs
+-r--------    1 root     root             0 Jan  1  1970 /d/omap_iommu/55082000.mmu/tlb
+root@am57xx-evm:~#
+root@am57xx-evm:~# cat /d/omap_iommu/*mmu/*
+32
+cat: read error: Operation not permitted
+cat: read error: Operation not permitted
+cat: read error: Operation not permitted
+32
+cat: read error: Operation not permitted
+cat: read error: Operation not permitted
+cat: read error: Operation not permitted
+root@am57xx-evm:~#
+root@am57xx-evm:~#
+root@am57xx-evm:~# cd /rpmsg/
+root@am57xx-evm:/rpmsg# insmod iommu_dt_test.ko count=5
+[  173.455915] omap_iommu_test_init: iommu_test_init entered
+[  173.461627] omap_iommu_test iommu_test: Enabling IOMMU...
+[  173.467337] omap_iommu_test iommu_test: dev->of_node->name: iommu_test dev_name iommu_test
+[  173.476024] omap_iommu_test iommu_test: testing IOMMU 4a066000.mmu
+[  173.482931] omap-iommu 4a066000.mmu: 4a066000.mmu: version 2.0
+[  173.489077] omap_iommu_test iommu_test: Mapping da 0xa0100000, pa 0x95100000, len 0x100000
+[  173.497928] omap_iommu_test iommu_test: Mapping da 0xa0200000, pa 0x95200000, len 0x100000
+[  173.506698] omap_iommu_test iommu_test: Mapping da 0xa0300000, pa 0x95300000, len 0x100000
+[  173.515445] omap_iommu_test iommu_test: Mapping da 0xa0400000, pa 0x95400000, len 0x100000
+[  173.524214] omap_iommu_test iommu_test: Mapping da 0xa0500000, pa 0x95500000, len 0x100000
+root@am57xx-evm:/rpmsg#
+root@am57xx-evm:/rpmsg#
+root@am57xx-evm:/rpmsg# cat /d/omap_iommu/*mmu/*
+32
+L:      da:     pte:
+--------------------------
+1: 0xa0100000 0x95100002
+1: 0xa0200000 0x95200002
+1: 0xa0300000 0x95300002
+1: 0xa0400000 0x95400002
+1: 0xa0500000 0x95500002
+            REVISION: 00000020
+           IRQSTATUS: 00000000
+           IRQENABLE: 0000001e
+          WALKING_ST: 00000000
+                CNTL: 00000006
+            FAULT_AD: 00000000
+                 TTB: acab8000
+                LOCK: 00000000
+              LD_TLB: 00000000
+                 CAM: 00000000
+                 RAM: 00000000
+              GFLUSH: 00000000
+         FLUSH_ENTRY: 00000000
+            READ_CAM: 00000000
+            READ_RAM: 00000000
+        EMU_FAULT_AD: 00000000
+    cam:     ram:
+-----------------------------------------
+32
+cat: read error: Operation not permitted
+cat: read error: Operation not permitted
+cat: read error: Operation not permitted
+root@am57xx-evm:/rpmsg#
+root@am57xx-evm:/rpmsg# rmmod iommu_dt_test
+[  192.916657] omap_iommu_test_cleanup: iommu_test_cleanup entered
+[  192.922988] omap_iommu_test_cleanup: detached device and freed domain
+root@am57xx-evm:/rpmsg#
+root@am57xx-evm:/rpmsg#
+root@am57xx-evm:/rpmsg# cat /d/omap_iommu/*mmu/*
+32
+cat: read error: Operation not permitted
+cat: read error: Operation not permitted
+cat: read error: Operation not permitted
+32
+cat: read error: Operation not permitted
+cat: read error: Operation not permitted
+cat: read error: Operation not permitted
+root@am57xx-evm:/rpmsg#
+root@am57xx-evm:/rpmsg#
+root@am57xx-evm:/rpmsg#
+root@am57xx-evm:/rpmsg#
+root@am57xx-evm:/rpmsg# reboot
+
+Broadcast message from root@am57xx-evm (ttyO2) (Mon Sep 21 15:59:56 2015):
+The system is going down for reboot NOW!
+INIT: Sending procUIM SYSFS Node Not Found
+Stopping Dropbear SSH server: stopped /usr/sbin/dropbear (pid 674)
+dropbear.
+Stopping telnet daemon.
+Stopping system message bus: dbus.
+hwclock: can't open '/dev/misc/rtc': No such file or directory
+Error opening /dev/fb0: No such file or directory
+Stopping syslogd/klogd: stopped syslogd (pid 701)
+stopped klogd (pid 704)
+done
+Stopping thttpd.
+Stopping Weston
+stopping statd: done
+ALSA: Storing mixer settings...
+/usr/sbin/alsactl: save_state:1590: No soundcards found...
+Stopping rpcbind daemon...
+done.
+Stopping Lighttpd Web Server: stopped /usr/sbin/lighttpd (pid 711)
+lighttpd.
+NOT deconfiguring network interfaces: / is an NFS mount
+Stopping Matrix GUI applicationstart-stop-daemon: warning: killing process 717: No such process
+.
+Disabling thermal zones...
+/etc/rc6.d/K98thermal-zone-init: line 13: /sys/class/thermal/thermal_zone*/mode: No such file or directory
+***************************************************************
+***************************************************************
+NOTICE: This file system contains the followin GPLv3 packages:
+        autoconf
+        binutils
+        cpp-symlinks
+        cpp
+        g++-symlinks
+        g++
+        gcc-symlinks
+        gcc
+        gdbserver
+        libgmp10
+        libmpc3
+        libmpfr4
+        make
+        parted
+
+If you do not wish to distribute GPLv3 components please remove
+the above packages prior to distribution.  This can be done using
+the opkg remove command.  i.e.:
+    opkg remove <package>
+Where <package> is the name printed in the list above
+
+NOTE: If the package is a dependency of another package you
+      will be notified of the dependent packages.  You should
+      use the --force-removal-of-dependent-packages option to
+      also remove the dependent packages as well
+***************************************************************
+***************************************************************
+Sending all processes the TERM signal...
+Sending all processes the KILL signal...
+Unmounting remote filesystems...
+Deactivating swap...
+Unmounting local filesystems...
+Rebooting... [  261.561294] reboot: Restarting system
+
+U-Boot SPL 2015.07 (Jul 20 2015 - 12:39:37)
+OMAP5432 ES2.0
+SPL: Please implement spl_start_uboot() for your board
+SPL: Direct Linux boot not active!
+reading u-boot.img
+reading u-boot.img
+
+
+U-Boot 2015.07 (Jul 20 2015 - 12:39:37 -0500)
+
+CPU  : OMAP5432 ES2.0
+Board: OMAP5432 uEVM
+I2C:   ready
+DRAM:  2 GiB
+MMC:   OMAP SD/MMC: 0, OMAP SD/MMC: 1
+SCSI:  SATA link 0 timeout.
+AHCI 0001.0300 32 slots 1 ports 3 Gbps 0x1 impl SATA mode
+flags: 64bit ncq stag pm led clo only pmp pio slum part ccc apst
+scanning bus for devices...
+Found 0 device(s).
+Net:   No ethernet found.
+Hit any key to stop autoboot:  0
+switch to partitions #0, OK
+mmc0 is current device
+SD/MMC found on device 0
+reading uEnv.txt
+1636 bytes read in 4 ms (399.4 KiB/s)
+Loaded environment from uEnv.txt
+Importing environment from mmc0 ...
+Running uenvcmd ...
+starting USB...
+USB0:   USB EHCI 1.00
+scanning bus 0 for devices... 3 USB Device(s) found
+       scanning usb for storage devices... 0 Storage Device(s) found
+       scanning usb for ethernet devices... 1 Ethernet Device(s) found
+network start
+Loading DTB over network ...
+Waiting for Ethernet connection... done.
+BOOTP broadcast 1
+BOOTP broadcast 2
+BOOTP broadcast 3
+*** Unhandled DHCP Option in OFFER/ACK: 150
+*** Unhandled DHCP Option in OFFER/ACK: 44
+*** Unhandled DHCP Option in OFFER/ACK: 46
+*** Unhandled DHCP Option in OFFER/ACK: 150
+*** Unhandled DHCP Option in OFFER/ACK: 44
+*** Unhandled DHCP Option in OFFER/ACK: 46
+DHCP client bound to address 128.247.9.82 (1031 ms)
+Using sms0 device
+TFTP from server 128.247.9.166; our IP address is 128.247.9.82
+Filename 'suman/omap5-uevm.dtb'.
+Load address: 0x88000000
+Loading: ####
+         2 MiB/s
+done
+Bytes transferred = 52118 (cb96 hex)
+DTB loaded ...
+Loading kernel over network ...
+Waiting for Ethernet connection... done.
+BOOTP broadcast 1
+*** Unhandled DHCP Option in OFFER/ACK: 150
+*** Unhandled DHCP Option in OFFER/ACK: 44
+*** Unhandled DHCP Option in OFFER/ACK: 46
+*** Unhandled DHCP Option in OFFER/ACK: 150
+*** Unhandled DHCP Option in OFFER/ACK: 44
+*** Unhandled DHCP Option in OFFER/ACK: 46
+DHCP client bound to address 128.247.9.82 (30 ms)
+Using sms0 device
+TFTP from server 128.247.9.166; our IP address is 128.247.9.82
+Filename 'suman/zImage'.
+Load address: 0x82000000
+Loading: #################################################################
+         #################################################################
+         #################################################################
+         #######################################################
+         2.2 MiB/s
+done
+Bytes transferred = 3669336 (37fd58 hex)
+Kernel loaded ...
+network stop
+Kernel image @ 0x82000000 [ 0x000000 - 0x37fd58 ]
+## Flattened Device Tree blob at 88000000
+   Booting using the fdt blob at 0x88000000
+   Loading Device Tree to 8fff0000, end 8ffffb95 ... OK
+
+Starting kernel ...
+
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Initializing cgroup subsys cpuset
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 4.3.0-rc3-00010-gcecd161224c2 (suman@Irmo) (gcc version 4.9.3 20150413 (prerelease) (L
+inaro GCC 4.9-2015.05) ) #56 SMP Fri Oct 2 16:28:57 CDT 2015
+[    0.000000] CPU: ARMv7 Processor [412fc0f2] revision 2 (ARMv7), cr=10c5387d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, PIPT instruction cache
+[    0.000000] Machine model: TI OMAP5 uEVM board
+[    0.000000] cma: Reserved 16 MiB at 0xfd800000
+[    0.000000] Memory policy: Data cache writealloc
+[    0.000000] OMAP4: Map 0xfee00000 to fe600000 for dram barrier
+[    0.000000] OMAP5432 ES2.0
+[    0.000000] PERCPU: Embedded 14 pages/cpu @ee5ad000 s25088 r8192 d24064 u57344
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 517970
+[    0.000000] Kernel command line: root=/dev/nfs rw nfsroot=128.247.9.166:/home/suman/projects/rfs/dra7/am57xx-sdk
+ rootdelay=1 console=ttyO2,115200n8 noinitrd ip=dhcp
+[    0.000000] PID hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+[    0.000000] Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+[    0.000000] Memory: 2024236K/2078720K available (6723K kernel code, 750K rwdata, 2288K rodata, 452K init, 8265K
+bss, 38100K reserved, 16384K cma-reserved, 1284096K highmem)
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xffc00000 - 0xfff00000   (3072 kB)
+[    0.000000]     vmalloc : 0xf0000000 - 0xff000000   ( 240 MB)
+[    0.000000]     lowmem  : 0xc0000000 - 0xef800000   ( 760 MB)
+[    0.000000]     pkmap   : 0xbfe00000 - 0xc0000000   (   2 MB)
+[    0.000000]     modules : 0xbf000000 - 0xbfe00000   (  14 MB)
+[    0.000000]       .text : 0xc0008000 - 0xc08d4ebc   (9012 kB)
+[    0.000000]       .init : 0xc08d5000 - 0xc0946000   ( 452 kB)
+[    0.000000]       .data : 0xc0946000 - 0xc0a01b60   ( 751 kB)
+[    0.000000]        .bss : 0xc0a04000 - 0xc12164f8   (8266 kB)
+[    0.000000] Running RCU self tests
+[    0.000000] Hierarchical RCU implementation.
+[    0.000000]  RCU lockdep checking is enabled.
+[    0.000000]  Build-time adjustment of leaf fanout to 32.
+[    0.000000] NR_IRQS:16 nr_irqs:16 16
+[    0.000000] OMAP clockevent source: timer1 at 32768 Hz
+[    0.000000] clocksource: 32k_counter: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 58327039986419 ns
+[    0.000000] sched_clock: 32 bits at 32kHz, resolution 30517ns, wraps every 65535999984741ns
+[    0.000000] OMAP clocksource: 32k_counter at 32768 Hz
+[    0.000457] Architected cp15 timer(s) running at 6.14MHz (virt).
+[    0.000457] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x16ac02862, max_idle_ns: 44079520
+2218 ns
+[    0.000492] sched_clock: 56 bits at 6MHz, resolution 162ns, wraps every 4398046511085ns
+[    0.000503] Switching to timer-based delay loop, resolution 162ns
+[    0.001516] Console: colour dummy device 80x30
+[    0.001548] Lock dependency validator: Copyright (c) 2006 Red Hat, Inc., Ingo Molnar
+[    0.001555] ... MAX_LOCKDEP_SUBCLASSES:  8
+[    0.001562] ... MAX_LOCK_DEPTH:          48
+[    0.001568] ... MAX_LOCKDEP_KEYS:        8191
+[    0.001574] ... CLASSHASH_SIZE:          4096
+[    0.001580] ... MAX_LOCKDEP_ENTRIES:     32768
+[    0.001586] ... MAX_LOCKDEP_CHAINS:      65536
+[    0.001591] ... CHAINHASH_SIZE:          32768
+[    0.001598]  memory used by lock dependency info: 5167 kB
+[    0.001604]  per task-struct memory footprint: 1536 bytes
+[    0.001622] Calibrating delay loop (skipped), value calculated using timer frequency.. 12.28 BogoMIPS (lpj=61440
+)
+[    0.001635] pid_max: default: 32768 minimum: 301
+[    0.001905] Security Framework initialized
+[    0.002003] Mount-cache hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.002015] Mountpoint-cache hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.004045] Initializing cgroup subsys io
+[    0.004119] Initializing cgroup subsys memory
+[    0.004184] Initializing cgroup subsys devices
+[    0.004239] Initializing cgroup subsys freezer
+[    0.004322] Initializing cgroup subsys perf_event
+[    0.004369] CPU: Testing write buffer coherency: ok
+[    0.005205] /cpus/cpu@0 missing clock-frequency property
+[    0.005225] /cpus/cpu@1 missing clock-frequency property
+[    0.005236] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+[    0.005289] Setting up static identity map for 0x80008280 - 0x800082f0
+[    0.009511] CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+[    0.009906] Brought up 2 CPUs
+[    0.009919] SMP: Total of 2 processors activated (24.57 BogoMIPS).
+[    0.009927] CPU: All CPU(s) started in SVC mode.
+[    0.012446] devtmpfs: initialized
+[    0.053926] VFP support v0.3: implementor 41 architecture 4 part 30 variant f rev 0
+[    0.055241] omap_hwmod: l3_main_3 using broken dt data from ocp
+[    0.056491] omap_hwmod: l3_main_2 using broken dt data from ocp
+[    0.168659] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.169684] pinctrl core: initialized pinctrl subsystem
+[    0.173098] NET: Registered protocol family 16
+[    0.176528] DMA: preallocated 256 KiB pool for atomic coherent allocations
+[    0.200982] cpuidle: using governor ladder
+[    0.230966] cpuidle: using governor menu
+[    0.241394] OMAP GPIO hardware version 0.1
+[    0.251769] platform 50000000.gpmc: Cannot lookup hwmod 'gpmc'
+[    0.251968] omap-gpmc 50000000.gpmc: _od_fail_runtime_resume: FIXME: missing hwmod/omap_dev info
+[    0.251983] omap-gpmc 50000000.gpmc: GPMC revision 6.0
+[    0.257198] irq: no irq domain found for /ocp/l4@4a000000/scm@2800/pinmux@40 !
+[    0.278293] No ATAGs?
+[    0.278347] hw-breakpoint: found 5 (+1 reserved) breakpoint and 4 watchpoint registers.
+[    0.278356] hw-breakpoint: maximum watchpoint size is 8 bytes.
+[    0.280425] OMAP DMA hardware revision 0.0
+[    0.331980] omap-dma-engine 4a056000.dma-controller: OMAP DMA engine driver
+[    0.336895] omap-iommu 4a066000.mmu: 4a066000.mmu registered
+[    0.337232] omap-iommu 55082000.mmu: 55082000.mmu registered
+[    0.338020] SCSI subsystem initialized
+[    0.338890] usbcore: registered new interface driver usbfs
+[    0.339011] usbcore: registered new interface driver hub
+[    0.339118] usbcore: registered new device driver usb
+[    0.339676] hsusb2_phy supply vcc not found, using dummy regulator
+[    0.340191] hsusb3_phy supply vcc not found, using dummy regulator
+[    0.340734] omap_i2c 48070000.i2c: could not find pctldev for node /ocp/l4@4a000000/scm@2800/pinmux@40/pinmux_i2
+c1_pins, deferring probe
+[    0.341890] omap_i2c 48072000.i2c: bus 1 rev0.12 at 100 kHz
+[    0.342649] omap_i2c 48060000.i2c: bus 2 rev0.12 at 100 kHz
+[    0.343377] omap_i2c 4807a000.i2c: bus 3 rev0.12 at 100 kHz
+[    0.343449] omap_i2c 4807c000.i2c: could not find pctldev for node /ocp/l4@4a000000/scm@2800/pinmux@40/pinmux_i2
+c5_pins, deferring probe
+[    0.343751] pps_core: LinuxPPS API ver. 1 registered
+[    0.343759] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.343801] PTP clock support registered
+[    0.346459] clocksource: Switched to clocksource arch_sys_counter
+[    0.450472] NET: Registered protocol family 2
+[    0.451784] TCP established hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.451909] TCP bind hash table entries: 8192 (order: 6, 294912 bytes)
+[    0.454155] TCP: Hash tables configured (established 8192 bind 8192)
+[    0.454287] UDP hash table entries: 512 (order: 3, 40960 bytes)
+[    0.454593] UDP-Lite hash table entries: 512 (order: 3, 40960 bytes)
+[    0.455452] NET: Registered protocol family 1
+[    0.456475] RPC: Registered named UNIX socket transport module.
+[    0.456485] RPC: Registered udp transport module.
+[    0.456493] RPC: Registered tcp transport module.
+[    0.456501] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.498787] hw perfevents: enabled with armv7_cortex_a15 PMU driver, 7 counters available
+[    0.502865] futex hash table entries: 512 (order: 3, 32768 bytes)
+[    0.503158] audit: initializing netlink subsys (disabled)
+[    0.503272] audit: type=2000 audit(0.490:1): initialized
+[    0.505649] VFS: Disk quotas dquot_6.6.0
+[    0.505754] VFS: Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+[    0.507250] NFS: Registering the id_resolver key type
+[    0.507486] Key type id_resolver registered
+[    0.507495] Key type id_legacy registered
+[    0.507613] jffs2: version 2.2. (NAND) (SUMMARY)  Â© 2001-2006 Red Hat, Inc.
+[    0.510917] bounce: pool size: 64 pages
+[    0.510977] io scheduler noop registered
+[    0.510993] io scheduler deadline registered
+[    0.511025] io scheduler cfq registered (default)
+[    0.514433] ti-pipe3 4a096000.phy: can't get syscon-pllreset, sata dpll won't idle
+[    0.515844] pinctrl-single 4a002840.pinmux: 219 pins at pa fc002840 size 438
+[    0.516261] pinctrl-single 4ae0c840.pinmux: 28 pins at pa fce0c840 size 56
+[    0.521195] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    0.525521] omap_uart 4806a000.serial: no wakeirq for uart0
+[    0.525823] 4806a000.serial: ttyO0 at MMIO 0x4806a000 (irq = 306, base_baud = 3000000) is a OMAP UART0
+[    0.526876] omap_uart 4806c000.serial: no wakeirq for uart1
+[    0.527069] 4806c000.serial: ttyO1 at MMIO 0x4806c000 (irq = 307, base_baud = 3000000) is a OMAP UART1
+[    0.528157] 48020000.serial: ttyO2 at MMIO 0x48020000 (irq = 308, base_baud = 3000000) is a OMAP UART2
+[    1.425732] console [ttyO2] enabled
+[    1.430386] omap_uart 4806e000.serial: no wakeirq for uart3
+[    1.436438] 4806e000.serial: ttyO3 at MMIO 0x4806e000 (irq = 309, base_baud = 3000000) is a OMAP UART3
+[    1.447055] omap_uart 48066000.serial: no wakeirq for uart4
+[    1.453072] 48066000.serial: ttyO4 at MMIO 0x48066000 (irq = 310, base_baud = 3000000) is a OMAP UART4
+[    1.463577] omap_uart 48068000.serial: no wakeirq for uart5
+[    1.469609] 48068000.serial: ttyO5 at MMIO 0x48068000 (irq = 311, base_baud = 3000000) is a OMAP UART5
+[    1.503525] brd: module loaded
+[    1.520906] loop: module loaded
+[    1.526357] ahci 4a140000.sata: SSS flag set, parallel bus scan disabled
+[    1.533412] ahci 4a140000.sata: AHCI 0001.0300 32 slots 1 ports 3 Gbps 0x1 impl platform mode
+[    1.542350] ahci 4a140000.sata: flags: 64bit ncq sntf stag pm led clo only pmp pio slum part ccc apst
+[    1.554500] scsi host0: ahci
+[    1.558387] ata1: SATA max UDMA/133 mmio [mem 0x4a140000-0x4a1410ff] port 0x100 irq 338
+[    1.567579] mtdoops: mtd device (mtddev=name/number) must be supplied
+[    1.581551] usbcore: registered new interface driver smsc95xx
+[    1.588247] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    1.595076] ehci-omap: OMAP-EHCI Host Controller driver
+[    1.614016] ehci-omap 4a064c00.ehci: EHCI Host Controller
+[    1.620013] ehci-omap 4a064c00.ehci: new USB bus registered, assigned bus number 1
+[    1.628365] ehci-omap 4a064c00.ehci: irq 406, io mem 0x4a064c00
+[    1.646458] ehci-omap 4a064c00.ehci: USB 2.0 started, EHCI 1.00
+[    1.653596] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+[    1.660717] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    1.668279] usb usb1: Product: EHCI Host Controller
+[    1.673379] usb usb1: Manufacturer: Linux 4.3.0-rc3-00010-gcecd161224c2 ehci_hcd
+[    1.681127] usb usb1: SerialNumber: 4a064c00.ehci
+[    1.688324] hub 1-0:1.0: USB hub found
+[    1.692397] hub 1-0:1.0: 3 ports detected
+[    1.740194] mousedev: PS/2 mouse device common for all mice
+[    1.746027] i2c /dev entries driver
+[    1.856746] ledtrig-cpu: registered to indicate activity on CPUs
+[    1.864581] oprofile: using timer interrupt.
+[    1.869524] Initializing XFRM netlink socket
+[    1.874259] NET: Registered protocol family 10
+[    1.879635] mmc0: MAN_BKOPS_EN bit is not set
+[    1.880614] sit: IPv6 over IPv4 tunneling driver
+[    1.882194] NET: Registered protocol family 17
+[    1.882244] NET: Registered protocol family 15
+[    1.882480] Key type dns_resolver registered
+[    1.882624] omap_vc_init_channel: No PMIC info for vdd_core
+[    1.882628] omap_vp_init: No PMIC info for vdd_core
+[    1.882641] omap_vc_init_channel: No PMIC info for vdd_mm
+[    1.882644] omap_vp_init: No PMIC info for vdd_mm
+[    1.882656] omap_vc_init_channel: No PMIC info for vdd_mpu
+[    1.882659] omap_vp_init: No PMIC info for vdd_mpu
+[    1.883340] Power Management for TI OMAP4+ devices.
+[    1.883597] ThumbEE CPU extension supported.
+[    1.883620] Registering SWP/SWPB emulation handler
+[    1.883632] SmartReflex Class3 initialized
+[    1.900492] palmas 0-0048: Irq flag is 0x00000000
+[    1.916575] ata1: SATA link down (SStatus 0 SControl 300)
+[    1.966781] palmas 0-0048: Muxing GPIO 2, PWM 0, LED 0
+[    1.966834] mmc0: new high speed MMC card at address 0001
+[    1.981368] mmcblk0: mmc0:0001 SEM04G 3.68 GiB
+[    1.986848] mmcblk0boot0: mmc0:0001 SEM04G partition 1 2.00 MiB
+[    1.993678] mmcblk0boot1: mmc0:0001 SEM04G partition 2 2.00 MiB
+[    2.016487] usb 1-3: new high-speed USB device number 2 using ehci-omap
+[    2.054243] twl6040 0-004b: clk32k is not handled
+[    2.064156] omap_i2c 48070000.i2c: bus 0 rev0.12 at 400 kHz
+[    2.071820] omap_i2c 4807c000.i2c: bus 4 rev0.12 at 400 kHz
+[    2.118033] hctosys: unable to open rtc device (rtc0)
+[    2.123339] sr_init: No PMIC hook to init smartreflex
+[    2.128867] sr_init: platform driver register failed for SR
+[    2.154659] mmc2: host does not support reading read-only switch, assuming write-enable
+[    2.165323] mmc2: new high speed SD card at address b368
+[    2.172125] mmcblk1: mmc2:b368 NCard 1.85 GiB
+[    2.178322]  mmcblk1: p1 p2
+[    2.186961] usb 1-3: New USB device found, idVendor=0424, idProduct=9730
+[    2.193989] usb 1-3: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+[    2.205358] smsc95xx v1.0.4
+[    2.272521] smsc95xx 1-3:1.0 eth0: register 'smsc95xx' at usb-4a064c00.ehci-3, smsc95xx USB 2.0 Ethernet, ce:67:
+7f:f1:2d:82
+[    2.556437] usb 1-2: new high-speed USB device number 3 using ehci-omap
+[    2.706818] usb 1-2: New USB device found, idVendor=0424, idProduct=3503
+[    2.713850] usb 1-2: New USB device strings: Mfr=0, Product=0, SerialNumber=0
+[    2.722706] hub 1-2:1.0: USB hub found
+[    2.726810] hub 1-2:1.0: 3 ports detected
+[    3.230568] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+[    4.719598] smsc95xx 1-3:1.0 eth0: link up, 100Mbps, full-duplex, lpa 0x45E1
+[    4.736471] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[    4.756430] Sending DHCP requests ., OK
+[    5.806460] IP-Config: Got DHCP answer from 128.247.8.4, my address is 128.247.9.58
+[    5.815087] IP-Config: Complete:
+[    5.818507]      device=eth0, hwaddr=ce:67:7f:f1:2d:82, ipaddr=128.247.9.58, mask=255.255.254.0, gw=128.247.8.1
+[    5.829106]      host=dhcp-128-247-9-58, domain=am.dhcp.ti.com, nis-domain=(none)
+[    5.836976]      bootserver=0.0.0.0, rootserver=128.247.9.166, rootpath=
+[    5.843815]      nameserver0=192.0.2.2, nameserver1=192.0.2.3
+[    5.851617] ldo3: disabling
+[    5.855611] ldo8: disabling
+[    5.860769] Waiting 1 sec before mounting root device...
+[    6.879659] VFS: Mounted root (nfs filesystem) on device 0:15.
+[    6.887038] devtmpfs: mounted
+[    6.890555] Freeing unused kernel memory: 452K (c08d5000 - c0946000)
+INIT: version 2.88 booting
+Error opening /dev/fb0: No such file or directory
+Starting udev
+[    7.949771] udevd[126]: starting version 182
+depmod: ERROR: could not open directory /lib/modules/4.3.0-rc3-00010-gcecd161224c2: No such file or directory
+depmod: WARNING: -e needs -E or -F
+depmod: ERROR: could not open directory /lib/modules/4.3.0-rc3-00010-gcecd161224c2: No such file or directory
+depmod: FATAL: could not search modules: No such file or directory
+Starting Bootlog daemon: bootlogd: cannot allocate pseudo tty: No such file or directory
+bootlogd.
+[   11.234103] random: dd urandom read with 120 bits of entropy available
+[   11.488048] EXT4-fs (mmcblk1p2): warning: mounting fs with errors, running e2fsck is recommended
+[   11.502728] EXT4-fs (mmcblk1p2): mounted filesystem with ordered data mode. Opts: (null)
+[   11.523593] FAT-fs (mmcblk1p1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+[   11.547968] random: nonblocking pool is initialized
+ALSA: Restoring mixer settings...
+hwclock: can't open '/dev/misc/rtc': No such file or directory
+/usr/sbin/alsactl: load_state:1729: No soundcards found...
+Mon Sep 21 16:00:00 UTC 2015
+hwclock: can't open '/dev/misc/rtc': No such file or directory
+INIT: Entering runlevel: 5
+NOT configuring network interfaces: / is an NFS mount
+Starting system message bus: dbus.
+UIM SYSFS Node Not Found
+Starting Dropbear SSH server: dropbear.
+Starting telnet daemon.
+Starting rpcbind daemon...done.
+creating NFS state directory: done
+starting statd: done
+hwclock: can't open '/dev/misc/rtc': No such file or directory
+Starting syslogd/klogd: done
+Starting thttpd.
+Starting Lighttpd Web Server: lighttpd.
+2015-09-21 16:00:03: (/home/jenkins/tisdk-build-am57x/build-CORTEX_1/arago-tmp-external-linaro-toolchain/work/corte
+xa15t2hf-vfp-neon-linux-gnueabi/lighttpd/1.4.33-r1/lighttpd-1.4.33/src/log.c.166) server started
+/
+Starting Matrix GUI application.
+Enabling thermal zones...
+/etc/rc5.d/S98thermal-zone-init: line 7: /sys/class/thermal/thermal_zone*/mode: No such file or directory
+***************************************************************
+***************************************************************
+NOTICE: This file system contains the followin GPLv3 packages:
+        autoconf
+        binutils
+        cpp-symlinks
+        cpp
+        g++-symlinks
+        g++
+        gcc-symlinks
+        gcc
+        gdbserver
+        libgmp10
+        libmpc3
+        libmpfr4
+        make
+        parted
+
+If you do not wish to distribute GPLv3 components please remove
+the above packages prior to distribution.  This can be done using
+the opkg remove command.  i.e.:
+    opkg remove <package>
+Where <package> is the name printed in the list above
+
+NOTE: If the package is a dependency of another package you
+      will be notified of the dependent packages.  You should
+      use the --force-removal-of-dependent-packages option to
+      also remove the dependent packages as well
+***************************************************************
+***************************************************************
+Stopping Bootlog daemon: bootlogd.
+
+ _____                    _____           _         _
+|  _  |___ ___ ___ ___   |  _  |___ ___  |_|___ ___| |_
+|     |  _| .'| . | . |  |   __|  _| . | | | -_|  _|  _|
+|__|__|_| |__,|_  |___|  |__|  |_| |___|_| |___|___|_|
+              |___|                    |___|
+
+Arago Project http://arago-project.org am57xx-evm /dev/ttyO2
+
+Arago 2015.03 am57xx-evm /dev/ttyO2
+
+am57xx-evm login: root
+root@am57xx-evm:~#
+root@am57xx-evm:~#
+root@am57xx-evm:~# cat /proc/version
+Linux version 4.3.0-rc3-00010-gcecd161224c2 (suman@Irmo) (gcc version 4.9.3 20150413 (prerelease) (Linaro GCC 4.9-2
+015.05) ) #56 SMP Fri Oct 2 16:28:57 CDT 2015
+root@am57xx-evm:~#
+root@am57xx-evm:~#
+root@am57xx-evm:~# ls -l /sys/bus/soc/devices/soc0/*
+-r--r--r--    1 root     root          4096 Sep 21 16:00 /sys/bus/soc/devices/soc0/family
+-r--r--r--    1 root     root          4096 Sep 21 16:00 /sys/bus/soc/devices/soc0/machine
+-r--r--r--    1 root     root          4096 Sep 21 16:00 /sys/bus/soc/devices/soc0/revision
+lrwxrwxrwx    1 root     root             0 Jan  1  1970 /sys/bus/soc/devices/soc0/subsystem -> ../../bus/soc
+-r--r--r--    1 root     root          4096 Sep 21 16:00 /sys/bus/soc/devices/soc0/type
+-rw-r--r--    1 root     root          4096 Jan  1  1970 /sys/bus/soc/devices/soc0/uevent
+
+/sys/bus/soc/devices/soc0/power:
+-rw-r--r--    1 root     root          4096 Sep 21 16:00 autosuspend_delay_ms
+-rw-r--r--    1 root     root          4096 Sep 21 16:00 control
+-r--r--r--    1 root     root          4096 Sep 21 16:00 runtime_active_time
+-r--r--r--    1 root     root          4096 Sep 21 16:00 runtime_status
+-r--r--r--    1 root     root          4096 Sep 21 16:00 runtime_suspended_time
+root@am57xx-evm:~#
+root@am57xx-evm:~# cat /sys/bus/soc/devices/soc0/*
+OMAP5
+OMAP5432
+cat: read error: Is a directory
+ES2.0
+cat: read error: Is a directory
+GP
+root@am57xx-evm:~#
+root@am57xx-evm:~#
+root@am57xx-evm:~# dmesg | grep mmu
+[    0.336895] omap-iommu 4a066000.mmu: 4a066000.mmu registered
+[    0.337232] omap-iommu 55082000.mmu: 55082000.mmu registered
+root@am57xx-evm:~#
+root@am57xx-evm:~#
+root@am57xx-evm:~# ls -l /sys/bus/platform/devices/ | grep mmu
+lrwxrwxrwx    1 root     root             0 Jan  1  1970 4a066000.mmu -> ../../../devices/platform/44000000.ocp/4a0
+66000.mmu
+lrwxrwxrwx    1 root     root             0 Jan  1  1970 55082000.mmu -> ../../../devices/platform/44000000.ocp/550
+82000.mmu
+lrwxrwxrwx    1 root     root             0 Jan  1  1970 iommu_test -> ../../../devices/platform/iommu_test
+root@am57xx-evm:~#
+root@am57xx-evm:~# ls -l /sys/bus/platform/drivers/omap-iommu/
+lrwxrwxrwx    1 root     root             0 Sep 21 16:00 4a066000.mmu -> ../../../../devices/platform/44000000.ocp/
+4a066000.mmu
+lrwxrwxrwx    1 root     root             0 Sep 21 16:00 55082000.mmu -> ../../../../devices/platform/44000000.ocp/
+55082000.mmu
+--w-------    1 root     root          4096 Sep 21 16:00 bind
+--w-------    1 root     root          4096 Sep 21 16:00 uevent
+--w-------    1 root     root          4096 Sep 21 16:00 unbind
+root@am57xx-evm:~#
+root@am57xx-evm:~# ls -l /proc/device-tree/ocp/ | grep mmu
+drwxr-xr-x    2 root     root             0 Sep 21 16:00 mmu@4a066000
+drwxr-xr-x    2 root     root             0 Sep 21 16:00 mmu@55082000
+root@am57xx-evm:~#
+root@am57xx-evm:~#
+root@am57xx-evm:~# ls -l /d/omap_iommu/*mmu/*
+-r--------    1 root     root             0 Jan  1  1970 /d/omap_iommu/4a066000.mmu/nr_tlb_entries
+-r--------    1 root     root             0 Jan  1  1970 /d/omap_iommu/4a066000.mmu/pagetable
+-r--------    1 root     root             0 Jan  1  1970 /d/omap_iommu/4a066000.mmu/regs
+-r--------    1 root     root             0 Jan  1  1970 /d/omap_iommu/4a066000.mmu/tlb
+-r--------    1 root     root             0 Jan  1  1970 /d/omap_iommu/55082000.mmu/nr_tlb_entries
+-r--------    1 root     root             0 Jan  1  1970 /d/omap_iommu/55082000.mmu/pagetable
+-r--------    1 root     root             0 Jan  1  1970 /d/omap_iommu/55082000.mmu/regs
+-r--------    1 root     root             0 Jan  1  1970 /d/omap_iommu/55082000.mmu/tlb
+root@am57xx-evm:~#
+root@am57xx-evm:~# cat /d/omap_iommu/*mmu/*
+32
+cat: read error: Operation not permitted
+cat: read error: Operation not permitted
+cat: read error: Operation not permitted
+32
+cat: read error: Operation not permitted
+cat: read error: Operation not permitted
+cat: read error: Operation not permitted
+root@am57xx-evm:~#
+root@am57xx-evm:~#
+root@am57xx-evm:~# cd /rpmsg/
+root@am57xx-evm:/rpmsg# insmod iommu_dt_test.ko count=5
+[  240.524174] omap_iommu_test_init: iommu_test_init entered
+[  240.529879] omap_iommu_test iommu_test: Enabling IOMMU...
+[  240.535559] omap_iommu_test iommu_test: dev->of_node->name: iommu_test dev_name iommu_test
+[  240.544253] omap_iommu_test iommu_test: testing IOMMU 55082000.mmu
+[  240.551162] omap-iommu 55082000.mmu: 55082000.mmu: version 2.1
+[  240.557324] omap_iommu_test iommu_test: Mapping da 0xa0100000, pa 0x95100000, len 0x100000
+[  240.566121] omap_iommu_test iommu_test: Mapping da 0xa0200000, pa 0x95200000, len 0x100000
+[  240.574840] omap_iommu_test iommu_test: Mapping da 0xa0300000, pa 0x95300000, len 0x100000
+[  240.583558] omap_iommu_test iommu_test: Mapping da 0xa0400000, pa 0x95400000, len 0x100000
+[  240.592276] omap_iommu_test iommu_test: Mapping da 0xa0500000, pa 0x95500000, len 0x100000
+root@am57xx-evm:/rpmsg#
+root@am57xx-evm:/rpmsg#
+root@am57xx-evm:/rpmsg# cat /d/omap_iommu/*mmu/*
+32
+cat: read error: Operation not permitted
+cat: read error: Operation not permitted
+cat: read error: Operation not permitted
+32
+L:      da:     pte:
+--------------------------
+1: 0xa0100000 0x95100002
+1: 0xa0200000 0x95200002
+1: 0xa0300000 0x95300002
+1: 0xa0400000 0x95400002
+1: 0xa0500000 0x95500002
+            REVISION: 00000021
+           IRQSTATUS: 00000000
+           IRQENABLE: 0000001e
+          WALKING_ST: 00000000
+                CNTL: 00000006
+            FAULT_AD: 00000000
+                 TTB: acf14000
+                LOCK: 00000000
+              LD_TLB: 00000000
+                 CAM: 00000000
+                 RAM: 00000000
+              GFLUSH: 00000000
+         FLUSH_ENTRY: 00000000
+            READ_CAM: 00000000
+            READ_RAM: 00000000
+        EMU_FAULT_AD: 00000000
+    cam:     ram:
+-----------------------------------------
+root@am57xx-evm:/rpmsg#
+root@am57xx-evm:/rpmsg#
+root@am57xx-evm:/rpmsg# rmmod iommu_dt_test
+[  260.540715] omap_iommu_test_cleanup: iommu_test_cleanup entered
+[  260.553663] omap_hwmod: mmu_ipu: _wait_target_disable failed
+[  260.559970] omap_iommu_test_cleanup: detached device and freed domain
+root@am57xx-evm:/rpmsg#
+root@am57xx-evm:/rpmsg#
+root@am57xx-evm:/rpmsg#
+root@am57xx-evm:/rpmsg# cat /d/omap_iommu/*mmu/*
+32
+cat: read error: Operation not permitted
+cat: read error: Operation not permitted
+cat: read error: Operation not permitted
+32
+cat: read error: Operation not permitted
+cat: read error: Operation not permitted
+cat: read error: Operation not permitted
+root@am57xx-evm:/rpmsg#
+root@am57xx-evm:/rpmsg#
